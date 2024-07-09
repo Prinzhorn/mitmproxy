@@ -165,7 +165,7 @@ export default class KeyValueListEditor extends Component<
         }
     };
 
-    onMouseDown = (_e: React.MouseEvent) => {
+    onMouseDown = () => {
         this.justFinishedEditing = this.currentlyEditing;
     };
 }

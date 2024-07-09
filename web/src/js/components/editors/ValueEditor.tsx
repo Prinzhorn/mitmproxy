@@ -107,7 +107,7 @@ export default class ValueEditor extends Component<ValueEditorProps> {
     keyboard navigation.
      */
     private suppress_events = false;
-    onMouseDown = (_e: React.MouseEvent) => {
+    onMouseDown = () => {
         EVENT_DEBUG && console.debug("onMouseDown", this.suppress_events);
         this.suppress_events = true;
         window.addEventListener("mouseup", this.onMouseUp, { once: true });
@@ -131,11 +131,11 @@ export default class ValueEditor extends Component<ValueEditorProps> {
         this.suppress_events = false;
     };
 
-    onClick = (_e: React.MouseEvent) => {
+    onClick = () => {
         EVENT_DEBUG && console.debug("onClick", this.suppress_events);
     };
 
-    onFocus = (_e: React.FocusEvent) => {
+    onFocus = () => {
         EVENT_DEBUG &&
             console.debug("onFocus", this.props.content, this.suppress_events);
         if (!this.input.current) throw "unreachable";
@@ -143,11 +143,11 @@ export default class ValueEditor extends Component<ValueEditorProps> {
         this.startEditing();
     };
 
-    onInput = (_e: React.FormEvent) => {
+    onInput = () => {
         this.props.onInput?.(this.input.current?.textContent || "");
     };
 
-    onBlur = (_e: React.FocusEvent<HTMLSpanElement>) => {
+    onBlur = () => {
         EVENT_DEBUG &&
             console.debug("onBlur", this.props.content, this.suppress_events);
         if (this.suppress_events) return;

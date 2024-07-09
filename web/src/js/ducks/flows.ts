@@ -132,7 +132,7 @@ export function makeSort({
     desc: boolean;
 }): FlowSortFn {
     if (!column) {
-        return (_a, _b) => 0;
+        return () => 0;
     }
     const sortKeyFun = sortFunctions[column];
     return (a, b) => {

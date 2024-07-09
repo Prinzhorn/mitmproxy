@@ -278,6 +278,6 @@ function defaultFilter() {
     return true;
 }
 
-function defaultSort(_a, _b) {
+function defaultSort() {
     return 0;
 }
